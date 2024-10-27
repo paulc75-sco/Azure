@@ -1,3 +1,4 @@
+#Terraform to create a storage account
 resource "azurerm_resource_group" "storagedemo" {
   name     = var.name
   location = var.location
