@@ -13,8 +13,8 @@ variable "tags" {
   description = "Resource tags"
   default = {
     environment = "Missing Tag"
-    group       = "Digital Transformation"
-    owner       = "Digital Transformation"
+    group       = "Missing Tag"
+    owner       = "DMissing Tag"
 
   }
 
