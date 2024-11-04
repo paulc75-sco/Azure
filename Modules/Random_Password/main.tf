@@ -9,4 +9,7 @@ resource "random_password" "secure_password" {
 
 }
 
+output "password" {
+  value = random_password.secure_password.result
 
+}
