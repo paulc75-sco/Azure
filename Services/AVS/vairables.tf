@@ -1,51 +1,64 @@
 variable "rgname" {
-  type = string
+  description = "Resource group name"
+  type        = string
 
 }
 
 variable "location" {
-  type    = string
-  default = "West Europe"
+  description = "Deployed region"
+  type        = string
+  default     = "West Europe"
 
 }
 
 variable "avs_name" {
-  type = string
+  description = "Name of AVS Deployment"
+  type        = string
 
 }
 
 variable "avssku" {
-  type    = string
-  default = "av36"
+  description = "AVS SKU"
+  type        = string
+  default     = "av36"
 
 }
 
 variable "avs_nodes" {
-  type    = string
-  default = "3"
+  description = "AVS node count"
+  type        = string
+  default     = "3"
 
 }
 
 variable "avs_cidr" {
-  type = string
+  description = "CIDR required for AVS cluster.  Must be /22"
+  type        = string
 
 }
 
 variable "avs_internet_connection_enabled" {
-  type    = bool
-  default = false
+  description = "AVS internet connection"
+  type        = bool
+  default     = false
 }
 
 variable "avs_nsxt_password" {
-  type = string
+  description = "Sets NSXT password"
+  type        = string
+  sensitive   = true
 
 }
 variable "avs_vcenter_password" {
-  type = string
+  description = "Sets vcentre password"
+  type        = string
+  sensitive   = true
 
 }
 
 variable "subscription_id" {
-  type = string
+  description = "Sets subscription id in provider files"
+  type        = string
+  sensitive   = true
 
 }

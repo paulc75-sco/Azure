@@ -1,10 +1,11 @@
+#Create a resource group
 resource "azurerm_resource_group" "AVS_RG" {
   name     = var.rgname
   location = var.location
 
 
 }
-
+#Creates the AVS Cluster
 resource "azurerm_vmware_private_cloud" "AVS" {
   name                = var.avs_name
   resource_group_name = azurerm_resource_group.AVS_RG.name

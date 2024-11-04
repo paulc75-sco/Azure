@@ -1,3 +1,4 @@
+#Exposes name and location only
 output "name" {
   value = azurerm_resource_group.resourcegroup.name
 

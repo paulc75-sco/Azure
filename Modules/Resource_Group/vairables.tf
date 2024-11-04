@@ -1,9 +1,12 @@
 variable "name" {
-
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "location" {
-  default = "West Europe"
+  description = "Region to deploy resources"
+  type        = string
+  default     = "West Europe"
 
 }
 
@@ -14,7 +17,7 @@ variable "tags" {
   default = {
     environment = "Missing Tag"
     group       = "Missing Tag"
-    owner       = "DMissing Tag"
+    owner       = "Missing Tag"
 
   }
 
