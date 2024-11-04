@@ -2,8 +2,6 @@ module "resource_group" {
   source = "../../Modules/Resource_Group"
   name   = var.name
 
-  #tags = merge(var.tags)
-
 }
 
 resource "azurerm_virtual_network" "vnetdemopc" {
