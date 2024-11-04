@@ -21,3 +21,8 @@ variable "owner" {
   default = "Digital Transformation"
 
 }
+
+variable "subscription_id" {
+  type = string
+
+}

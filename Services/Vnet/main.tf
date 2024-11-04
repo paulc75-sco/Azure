@@ -1,14 +1,15 @@
-resource "azurerm_resource_group" "vnetdemopc" {
-  name     = var.resource_group_name
-  location = var.location
+module "resource_group" {
+  source = "../../Modules/Resource_Group"
+  name   = var.name
+
+  #tags = merge(var.tags)
 
 }
 
-
 resource "azurerm_virtual_network" "vnetdemopc" {
-  name                = azurerm_resource_group.vnetdemopc.name
-  location            = azurerm_resource_group.vnetdemopc.location
-  resource_group_name = azurerm_resource_group.vnetdemopc.name
+  name                = module.resource_group.name
+  location            = module.resource_group.location
+  resource_group_name = module.resource_group.name
   address_space       = var.address_space
 
   subnet {
@@ -33,8 +34,8 @@ resource "azurerm_virtual_network" "vnetdemopc" {
 
 
 resource "azurerm_network_security_group" "vnetdemo" {
-  name                = azurerm_resource_group.vnetdemopc.name
-  location            = azurerm_resource_group.vnetdemopc.location
-  resource_group_name = azurerm_resource_group.vnetdemopc.name
+  name                = module.resource_group.name
+  location            = module.resource_group.location
+  resource_group_name = module.resource_group.name
 
 }

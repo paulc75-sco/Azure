@@ -102,3 +102,8 @@ variable "vm_version" {
   default = "latest"
 
 }
+
+variable "subscription_id" {
+  type = string
+
+}

@@ -44,3 +44,8 @@ variable "avs_vcenter_password" {
   type = string
 
 }
+
+variable "subscription_id" {
+  type = string
+
+}

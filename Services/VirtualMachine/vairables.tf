@@ -60,4 +60,8 @@ variable "imageversion" {
 
 }
 
+variable "subscription_id" {
+  type = string
+
+}
 

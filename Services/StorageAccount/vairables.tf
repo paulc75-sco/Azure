@@ -27,5 +27,9 @@ variable "container_access_type" {
 
 variable "tags" {
   type = map(string)
-  }
-  
+}
+
+variable "subscription_id" {
+  type = string
+
+}
