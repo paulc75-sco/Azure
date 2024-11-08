@@ -1,13 +1,13 @@
 resource "azurerm_resource_group" "resourcegroup" {
-  name     = var.name
-  location = var.location
+  name     = var.global_name
+  location = var.global_location
 
   tags = {
-    Name        = var.name
-    Location    = var.location
-    Environment = var.environment
-    Group       = var.group
-    Owner       = var.owner
+    Name        = var.global_name
+    Location    = var.global_location
+    Environment = var.global_environment
+    Group       = var.global_group
+    Owner       = var.global_owner
 
   }
 

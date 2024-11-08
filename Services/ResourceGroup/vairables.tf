@@ -1,23 +1,24 @@
-variable "name" {
+#GLobal vairables decleration
+variable "global_name" {
 
 }
 
-variable "location" {
+variable "global_location" {
   default = "West Europe"
 
 }
 
-variable "environment" {
+variable "global_environment" {
   default = "Missing Tag"
 
 }
 
-variable "group" {
+variable "global_group" {
   default = "Digital Transformation"
 
 }
 
-variable "owner" {
+variable "global_owner" {
   default = "Digital Transformation"
 
 }
