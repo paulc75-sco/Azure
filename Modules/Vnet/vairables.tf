@@ -5,7 +5,6 @@
 variable "global_location" {
   description = "Location for deployment"
   type        = string
-  default     = "West Europe"
 
 }
 

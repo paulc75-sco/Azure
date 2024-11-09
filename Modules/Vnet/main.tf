@@ -6,7 +6,7 @@ resource "azurerm_virtual_network" "vnet" {
   dns_servers         = var.global_dns_servers
   tags                = var.global_tags
 
-  dynamic "subnets" {
+  dynamic "subnet" {
     for_each = var.vnet_subnets
     content {
 
