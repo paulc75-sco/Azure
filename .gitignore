@@ -41,3 +41,6 @@ terraform.rc
 
 # Ignore Provider.tf files
 provider.tf
+
+# Ignore my test folder
+test/
