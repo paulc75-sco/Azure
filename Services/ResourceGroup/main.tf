@@ -1,14 +1,13 @@
-resource "azurerm_resource_group" "resourcegroup" {
-  name     = var.global_name
-  location = var.global_location
+resource "azurerm_resource_group" "resource_group" {
+  name     = var.name
+  location = var.location
+  tags     = var.tags
 
-  tags = {
-    Name        = var.global_name
-    Location    = var.global_location
-    Environment = var.global_environment
-    Group       = var.global_group
-    Owner       = var.global_owner
-
+  lifecycle {
+    prevent_destroy = true
+    ignore_changes = [
+      tags["Created By"]
+    ]
   }
 
 }
