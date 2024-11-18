@@ -1,7 +1,6 @@
 resource "azurerm_resource_group" "resource_group" {
   name     = var.rgname
   location = var.location
-
 }
 
 resource "azurerm_key_vault" "key_vault" {
@@ -18,10 +17,14 @@ resource "azurerm_key_vault_access_policy" "key_vault_access_policy" {
   object_id    = data.azurerm_client_config.current.object_id
 
   secret_permissions = [
+    "Backup",
+    "Delete",
     "Get",
     "List",
-    "Set",
-    "Delete",
+    "Purge",
+    "Recover",
+    "Restore",
+    "Set"
   ]
 
 }
@@ -32,9 +35,20 @@ resource "tls_private_key" "ssh" {
 }
 
 resource "azurerm_key_vault_secret" "ssh_private_key" {
+  depends_on   = [azurerm_key_vault_access_policy.key_vault_access_policy, time_sleep.ssh_private_key_delay]
   name         = "ssh-private-key"
   value        = tls_private_key.ssh.private_key_pem
   key_vault_id = azurerm_key_vault.key_vault.id
+
+  timeouts {
+    create = "60m"
+  }
+
+}
+
+resource "time_sleep" "ssh_private_key_delay" {
+  depends_on      = [azurerm_key_vault_access_policy.key_vault_access_policy]
+  create_duration = "2m"
 
 }
 
